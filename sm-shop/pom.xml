@@ -85,10 +85,10 @@
 			<artifactId>mapstruct</artifactId>
 		</dependency>
 
-		<!-- H2 session -->
+		<!-- PostgreSql -->
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
 		</dependency>
 
 		<dependency>

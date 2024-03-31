@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  sales_manager_db:
+    image: 'postgres'
+    container_name: 'sales_manager'
+    volumes:
+      - type: volume
+        source: sales_manager_volume
+        target: "$PWD/Documents/docker_data/sales_manager_data"
+    ports:
+      - '42222:5432'
+    environment:
+      - 'POSTGRES_PASSWORD=secret'
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_DB=SALES_MANAGER'
+    networks:
+      - sales_manager_app_netwok
+    extra_hosts:
+      - 'sales_manager_app_netwok:192.168.238.5'
+volumes:
+  sales_manager_volume:
+networks:
+  sales_manager_app_netwok:
